@@ -1,0 +1,48 @@
+<!-- 
+    FUTURO E-COMMERCE: VENTA DE LIBROS 
+    El usuario podrá: 
+        1. Visualizar todos los libros (con y sin stock)
+        2. Agregarlos al carrito
+        3. Eliminarlos
+        4. Aplicar descuento en el caso de que cierto producto cuente con descuento
+        5. Ver el detalle de su compra
+        6. Cancelar la compra
+-->
+
+<!-- 
+    PRIMERA PREENTREGA: 
+     El usuario ingresará a través de prompts ciertos datos personales. Luego tendrá la posibilidad 
+     de seleccionar el botón "Libros disponibles". Al seleccionarlo se ejecuta el ciclo for que 
+     imprime en pantalla a modo de lista los libros disponibles según el array definido en el script.
+     Allí puede visualizar: nombre, autor y precio del libro.
+     Luego puede seleccionar el botón "Comprar" donde debe ingresar mediante un prompt la cantidad de 
+     ejemplares.
+     Posteriormente se muestra un alert con el detalle de la compra y el valor que debe pagar de acuerdo a la
+     cantidad de ejemplares ingresados.
+
+     El botón comprar se genera mediante javascript en una función que se invoca luego de que el usuario selecciona 
+     el botón "Libros disponibles".
+     Cuenta con ciertas condiciones a la hora de ingresar la cantidad de ejemplares y también si ingresa el nombre
+     de un libro no disponible.
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>Ecommerce Librería -  Amiune</title>
+</head>
+<body>
+    <h2>Venta de libros</h2>
+    <div>
+        <button class="btn btn-primary btn-sm" onclick="showBooks()">Libros disponibles</button>
+        
+        <ul id="booksList" class="list-group list-group-flush"></ul>
+
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
