@@ -87,7 +87,7 @@ function findBook() {
 
 
 // Pide al usuario ingresar la cantidad de ejemplares que desea comprar. Calcula el total
-// muestra un alert con el detalle de la compra
+// muestra un alert con el detalle de la compra y lo invita a participar por un juego
 // muestra un alert en el caso de ingresar una cantidad inválida
 function buyBook() {
     let amount = prompt("Ingrese la cantidad de ejemplares de "  + "'" + currentProduct.name + "'" + " que desea comprar:");
@@ -96,8 +96,32 @@ function buyBook() {
         amount = parseInt(amount);
         let total = currentProduct.price * amount;
         alert("Detalle de la compra:\n\nProducto: " + currentProduct.name + "\nAutor: " + currentProduct.autor + "\nPrecio: $" + currentProduct.price + "\nCantidad: " + amount + "\nTotal: $" + total);
-        alert("¡Muchísimas gracias por su compra! Esperamos que vuelva pronto.")
+        alert("¡Muchísimas gracias por su compra!")
+        let getUserAnswer = prompt("Con su compra está participando por un libro. Escriba 'SI' para participar");
+        if(getUserAnswer == "SI") {
+            guessNumber();
+        } else {
+            alert("Nos vemos pronto");
+        }
     } else {
         alert("La cantidad ingresada no es válida.");
     }
+}
+
+
+// Función que genera un número aleatorio. Pide al usuario adivinar dicho número
+function guessNumber() {
+    let randomNumber = parseInt(Math.random()* 10)+1;
+    let number, attempts = 5;
+    
+    do {
+        number = prompt(
+          `Ingrese un número (quedan ${attempts} intentos):`
+        );
+      } while(randomNumber != number && --attempts > 0);
+      if (randomNumber == number){
+        alert("¡Acertaste, te ganaste un libro! Te estaremos contactando para enviarte tu premio");
+      } else {
+        alert(`Te quedaste sin intentos. El número era ${randomNumber}; Buena suerte para la próxima`);
+      }
 }
