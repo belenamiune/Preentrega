@@ -51,7 +51,7 @@ alert("Selecciona el botón que se encuentra en la pantalla para poder ver la li
 
 // Función que imprime en pantalla a modo de lista los elementos del array con el nombre, autor y precio.
 // Invoca a la función showBuyButton para que se cree el botón en pantalla para poder proceder con la compra
-function showBooks() {
+showBooks = () => {
     showBuyButton();
     for (var i = 0; i < books.length; i++) {
         text += '<li class="list-group-item">'+books[i].name + " - " +books[i].autor+  " - $" + books[i].price+'</li>';
@@ -61,7 +61,7 @@ function showBooks() {
 
 
 // Función que crea el botón "Comprar"
-function showBuyButton() {
+showBuyButton = () => {
     var button= document.createElement("button");
     button.innerHTML = "Comprar"
     button.className = "btn btn-success btn-sm";
@@ -73,7 +73,7 @@ function showBuyButton() {
 // Pide al usuario ingresar el nombre. Lo busca en el array con el método find, en caso verdadero lo asigna a la variable
 // currentProduct, en caso falso muestra un alert
 // invoca la función BuyBook
-function findBook() {
+findBook = () => {
     let bookName = prompt("Ingrese el nombre del libro que desea comprar");
     const isBookAvailable = books.find(producto => producto.name === bookName);
 
@@ -89,7 +89,7 @@ function findBook() {
 // Pide al usuario ingresar la cantidad de ejemplares que desea comprar. Calcula el total
 // muestra un alert con el detalle de la compra y lo invita a participar por un juego
 // muestra un alert en el caso de ingresar una cantidad inválida
-function buyBook() {
+buyBook = () => {
     let amount = prompt("Ingrese la cantidad de ejemplares de "  + "'" + currentProduct.name + "'" + " que desea comprar:");
 
     if (!isNaN(amount) && parseInt(amount) > 0) {
@@ -110,8 +110,8 @@ function buyBook() {
 
 
 // Función que genera un número aleatorio. Pide al usuario adivinar dicho número
-function guessNumber() {
-    let randomNumber = parseInt(Math.random()* 10)+1;
+guessNumber = () => {
+    let randomNumber = parseInt(Math.random()* 100)+1;
     let number, attempts = 5;
     
     do {
