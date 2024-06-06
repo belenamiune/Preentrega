@@ -87,7 +87,7 @@ findBook = () => {
 
 
 // Pide al usuario ingresar la cantidad de ejemplares que desea comprar. Calcula el total
-// muestra un alert con el detalle de la compra y lo invita a participar por un juego
+// muestra un alert con el detalle de la compra y lo invita a participar por un juego mediante un confirm
 // muestra un alert en el caso de ingresar una cantidad inválida
 buyBook = () => {
     let amount = prompt("Ingrese la cantidad de ejemplares de "  + "'" + currentProduct.name + "'" + " que desea comprar:");
@@ -97,8 +97,8 @@ buyBook = () => {
         let total = currentProduct.price * amount;
         alert("Detalle de la compra:\n\nProducto: " + currentProduct.name + "\nAutor: " + currentProduct.autor + "\nPrecio: $" + currentProduct.price + "\nCantidad: " + amount + "\nTotal: $" + total);
         alert("¡Muchísimas gracias por su compra!")
-        let getUserAnswer = prompt("Con su compra está participando por un libro. Escriba 'SI' para participar");
-        if(getUserAnswer == "SI") {
+        let getUserAnswer = confirm("Con su compra está participando por un libro. Seleccione 'OK' para seguir participando");
+        if(getUserAnswer) {
             guessNumber();
         } else {
             alert("Nos vemos pronto");
